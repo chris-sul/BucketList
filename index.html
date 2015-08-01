@@ -1,0 +1,98 @@
+<html>
+  <head>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA8ziXJgtbLLEbNIcejm3iFoRumGH1wAOs"></script>
+    <script src='https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js'></script>
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+    <script src="script.js"></script>
+
+    <style type="text/css">
+      [draggable] {
+      user-select: none;
+      }
+
+      .Listli {
+      list-style-type:none;
+      padding:5px;
+      margin:2px;
+      background-color:#D6D6D6;
+      border:2px double #CCCCCC;
+      }
+    </style>
+
+    <title>Bucket List</title>
+
+    <link rel="icon" type="image/png" href="fav.png">
+  </head>
+  <body style="background-color:#00FBFF;font-family:gothic;padding-top:10px;">
+
+    <nav class="navbar navbar-default" style="width:98%;margin-left:auto;margin-right:auto;border-radius:25px;background-color:green;">
+      <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+          <img alt="Brand" src="xpc.png" height="52" width ="56" href="www.thexpcloud.com">
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="#">Home <span class="sr-only">(current)</span></a></li>
+            <li><a href="http://www.thexpcloud.com">The XP Cloud<span class="sr-only">(current)</span></a></li>
+          </ul>
+        </div><!-- /.navbar-collapse -->
+      </div><!-- /.container-fluid -->
+    </nav>
+
+    <div style="text-align:center"><h1>Welcome Bucket List Roadtrip</h1></div>
+
+    <div>
+      <table class="table-bordered"style="width:75%;height:75%;margin-left:auto;margin-right:auto;background-color:#C7C7C7;border-radius:25px;">
+        <tr>
+          <td>
+          <p style="text-align:center"><b>Start:</b></p>
+          <div style="text-align:center"><input type='text' id='inputStart' placeholder="Start" style="width:70%;border-radius:5px;text-align:center"></div>
+          </td>
+          <td><div style="text-align:center"><b>Extra Locations:</b></div>
+          <ul id="extraLocations" class="listUn"></ul>
+          </td>
+        </tr>
+        <tr>
+          <td>
+          <p style="text-align:center"><b>Destination:</b></p>
+          <div style="text-align:center"><input type='text' id='inputFinish' placeholder="Destination" style="width:70%;border-radius:5px;text-align:center"></div></td>
+          <td>
+            <div style="text-align:center">
+              <button type="button" class="btn btn-default" onclick="addLoc()" style="width:90%;">Add Stop!</button>
+            </div>
+          </td>
+        </tr>
+        <tr>
+        <td colspan="2">
+          <div style ="text-align:center">
+            <button type="button" class="btn btn-default" onclick="makeRoute()" style="width:50%;margin-left:auto;margin-right:auto;">Make Route!</button>
+          </div>
+        </td>
+        </tr>
+      </table>
+    </div>
+    <br>
+    <div id="map-canvas" style="width:75%;height:75%;margin-left:auto;margin-right:auto;border-radius:25px"></div>
+    <!-- <div id="directionsPanel" style="margin-left:auto;margin-right:auto;"></div> -->
+    <br>
+    <div class="panel panel-primary" style="width:75%;margin-left:auto;margin-right:auto;text-align:center;">
+            <div class="panel-heading" id="directionHeader"></div>
+                  <div class="panel-body" style="max-height: 600;overflow-y: scroll;" id="directionsPanel"></div>
+            </div>
+    </div>
+    <br>
+    <div style="width:75%;margin-left:auto;margin-right:auto;text-align:center;" id="goodTrip"></div>
+
+    <footer class="footer" style="background-color:#696969;color:white;border-radius:10px">
+          <div class="container" style="text-align:center;padding-top:10px;vertical-align:text-bottom;"><p>The XP Cloud</p><img src="xpc.png" alt="Smiley face" height="52" width="56" href="www.thexpcloud.com">
+          <p>Shameless promotion <a href="http://www.thexpcloud.com">www.thexpcloud.com</a></p>
+          </div>
+    </footer>
+  </body>
+</html>
